@@ -3,11 +3,11 @@
   {{ $exclude := slice "tags" "series" "categories" }}
     {{ if not (in $exclude .Type) }}
       <a href="{{ if eq hugo.Version "0.65.2" }}{{ .CurrentSection.FirstSection.Permalink }}{{ else }}{{ .FirstSection.Permalink }}{{ end }}index.xml" type="application/rss+xml" title="RSS" aria-label="RSS Feed Link">
-        {{ partial "svgs/etc/rss.svg" (dict "width" 32 "height" 32) }}
+        {{ partial "svgs/etc/rss.svg" (dict "width" 24 "height" 24) }}
       </a>
     {{ else }}
       <a href="{{ .Permalink }}/index.xml" type="application/rss+xml" title="RSS" aria-label="RSS Feed Link">
-        {{ partial "svgs/etc/rss.svg" (dict "width" 32 "height" 32) }}
+        {{ partial "svgs/etc/rss.svg" (dict "width" 24 "height" 24) }}
       </a>
     {{ end }}
   {{ end }}

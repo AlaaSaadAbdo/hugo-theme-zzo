@@ -22,13 +22,6 @@
         </div>
         {{ partial "search/search-result-desktop" . }}
     </div>
-
-    {{ if $.Param "enableSidebar" }}
-        <aside class="list__sidebar {{ if eq ($.Param "sidebarPosition") "left" }}l{{ else }}r{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
-            {{ partial "sidebar/sidebar-home" . }}
-        </aside>
-    {{ end }}
 </main>
-{{ partial "script/sidebar-script" . }}
 {{ partial "script/home-script" . }}
 {{ end }}

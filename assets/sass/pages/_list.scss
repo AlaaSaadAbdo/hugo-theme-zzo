@@ -1,12 +1,12 @@
 .list {
   &__main {
     position: relative;
-  
-    &[data-display="block"] {
-      display: block; 
+
+    &[data-display='block'] {
+      display: block;
     }
 
-    &[data-display="none"] {
+    &[data-display='none'] {
       display: none;
     }
   }
@@ -15,23 +15,23 @@
     &.l {
       margin-left: 1rem;
 
-      &[data-dir="rtl"] {
+      &[data-dir='rtl'] {
         margin-left: 0;
         margin-right: 1rem;
       }
 
-      &[data-dir="ltr"] {
+      &[data-dir='ltr'] {
         margin-left: 1rem;
         margin-right: 0;
       }
     }
 
-    &[data-dir="rtl"] {
+    &[data-dir='rtl'] {
       margin-left: 1rem;
       margin-right: 0;
     }
 
-    &[data-dir="ltr"] {
+    &[data-dir='ltr'] {
       margin-left: 0;
       margin-right: 1rem;
     }
