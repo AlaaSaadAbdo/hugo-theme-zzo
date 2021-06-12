@@ -1,39 +1,13 @@
-{{ $paginator := .Paginate (where .Pages "Type" .Type) }}
-{{ $ctx := . }}
-<div class="pub__list">
-  <ul class="pub__ul">
-    <div class="pgrid">
-      <div class="pgrid-sizer"></div>
-      {{ range $index, $element := $paginator.Pages }}
-        {{ range $idx, $elem := .Pages }}
-          {{ if .Params.pinned }}
-            <div class="pgrid-item">
-              <div class="pub__box">
-                <a href="{{ .Permalink }}" class="showcase__box--link" aria-label="{{ .Title }}"></a>
-                <div class="pub__box--title">
-                  {{ .Title }}
-                </div>
-                <div class="pub__box--desc">
-                  {{ .Params.abstract }}
-                </div>
-                <div class="pub__box--links" data-dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}">
-                  <a href="{{ .FirstSection.Permalink }}/{{ .Params.ENTRYTYPE }}">
-                    🎯 {{ .Params.ENTRYTYPE }}
-                  </a>
-                  {{ partial "publication/pub-tags" . }}
-                  {{ with .Params.links }}
-                    {{ range . }}
-                      <a href="{{ .link }}" class="pub__btn" target="_blank" rel="noreferrer">
-                        {{ .name }}
-                      </a>
-                    {{ end }}
-                  {{ end }}
-                </div>
-              </div>
-            </div>
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </div>
+{{ $paginator := .Paginate (where .Pages "Type" .Type) }} {{ $ctx := . }}
+<article class="single__contents single__contents--about" data-dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}" data-ani="{{ $.Site.Params.enableUiAnimation | default "true" }}">
+Here, you'll find some publications related to my work.
+</article>
+<div style="padding-top:20px;">
+  <ul>
+    <li style="font-size:15px;padding-left:30px;">
+      📅 May 6, 2021
+      <a href="https://www.thoughtworks.com/insights/blog/infrastructure-pipelines">Infrastructure Pipelines</a>
+      ✍️ Alaa Mansour, Michael  Lihs
+    </li>
   </ul>
 </div>
